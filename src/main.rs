@@ -20,10 +20,13 @@ fn main() {
         io::stdout().flush().expect("Failed to flush");
 
         let mut guess = String::new();
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
-        let guess = guess.trim();
+        let guess = match io::stdin().read_line(&mut guess) {
+            Ok(_) => guess.trim(),
+            Err(_) => {
+                println!("{}", "Failed to read line!".red().bold());
+                continue;
+            }
+        };
 
         let re = Regex::new(r"(?i)(quit|exit)").unwrap();
         if re.is_match(guess) {
