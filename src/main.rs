@@ -11,7 +11,6 @@ use std::io::Write;
 
 fn main() {
     let secret = rand::thread_rng().gen_range(1, 101);
-    // println!("The secret number is: {}", secret);
 
     println!("Guess the number!");
 
@@ -41,8 +40,6 @@ fn main() {
                 continue;
             }
         };
-
-        // println!("You guessed: {}", guess);
 
         match guess.cmp(&secret) {
             Less => println!("Too small!"),
