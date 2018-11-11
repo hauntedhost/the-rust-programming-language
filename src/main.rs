@@ -11,21 +11,26 @@ fn main() {
 
     println!("Guess the number!");
 
-    print!("Please input your guess: ");
-    io::stdout().flush().expect("Failed to flush");
+    loop {
+        print!("Please input your guess: ");
+        io::stdout().flush().expect("Failed to flush");
 
-    let mut guess = String::new();
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+        let mut guess = String::new();
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read line");
 
-    let guess: u32 = guess.trim().parse().expect("Not a number!");
+        let guess: u32 = guess.trim().parse().expect("Not a number!");
 
-    println!("You guessed: {}", guess);
+        println!("You guessed: {}", guess);
 
-    match guess.cmp(&secret) {
-        Less => println!("Too small!"),
-        Greater => println!("Too big!"),
-        Equal => println!("Hell yeah."),
+        match guess.cmp(&secret) {
+            Less => println!("Too small!"),
+            Greater => println!("Too big!"),
+            Equal => {
+                println!("Hell yeah.");
+                break;
+            }
+        }
     }
 }
