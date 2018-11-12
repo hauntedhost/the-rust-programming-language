@@ -1,0 +1,8 @@
+[package]
+name = "functions"
+version = "0.1.0"
+authors = ["Sean Omlor <somlor@eml.cc>"]
+
+[dependencies]
+
+colored = "1.6"
