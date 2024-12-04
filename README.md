@@ -5,4 +5,4 @@
 Personal code while reading [The Rust Programming Language](https://doc.rust-lang.org/book).
 
 ---
-[Sean Omlor](http://seanomlor.com)
+👻 [haunted.host](https://www.haunted.host)
